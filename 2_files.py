@@ -12,11 +12,17 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    with open('referat.txt', 'r', encoding='utf-8') as f:
+        content = f.read()
+        content_split = content.split(' ')
+        print(f'Количество слов в тексте: {len(content_split)}')
+        #print(content)
+        print(f'Длина строки состовляет: {len(content)} симоволов')
+        content_chng = content.replace('.', '!')
+        print(f"Текст с замененными на восклицательный знак точками:\n{content_chng}")
+
+    with open('referat2.txt', 'w', encoding='utf=8') as x:
+        content2 = x.write(content_chng)
 
 if __name__ == "__main__":
     main()
